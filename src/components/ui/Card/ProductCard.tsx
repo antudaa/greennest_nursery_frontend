@@ -28,7 +28,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             cartQuantity: 1,
             productImage,
             category: {
-                categoryName: category?.categoryName || '',
+                _id: category?._id,
+                categoryName: category?.categoryName,
+                categoryImage: category?.categoryImage,
             },
         };
         addToCart(cartItem);

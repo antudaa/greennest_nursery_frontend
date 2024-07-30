@@ -10,7 +10,9 @@ export interface CartItem {
   isDeleted?: boolean;
   productImage: string;
   category: {
+    _id: string;
     categoryName: string;
+    categoryImage: string;
   };
 }
 

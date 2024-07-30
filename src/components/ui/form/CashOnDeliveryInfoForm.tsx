@@ -16,7 +16,9 @@ interface IOrderProduct {
     productId: string;
     productName: string;
     category: {
+        _id: string;
         categoryName: string;
+        categoryImage: string;
     };
     unitPrice: number;
     productImage: string;
@@ -38,18 +40,22 @@ const CashOnDeliveryInfoForm: React.FC = () => {
         const orderedProducts: IOrderProduct[] = (cart || [])
             .filter(item => item._id !== undefined)
             .map(item => {
-                console.log(item); // Log the item to the console
                 return {
                     productId: item._id as string,
-                    productName: item.title || 'Unknown Product', // Provide a default value if undefined
-                    category: item.category,
+                    productName: item.title || 'Unknown Product',
+                    category: {
+                        _id: item?.category?._id,
+                        categoryName: item?.category?.categoryName,
+                        categoryImage: item?.category?.categoryImage,
+                    },
                     unitPrice: item.price,
                     productImage: item.productImage,
                     quantity: item.cartQuantity,
                     totalPrice: item.price * item.cartQuantity,
-                    cartQuantity: item.cartQuantity, // Include cartQuantity here
+                    cartQuantity: item.cartQuantity,
                 };
             });
+
         const productNumber = orderedProducts.length;
         const totalPrice = orderedProducts.reduce((total, product) => total + product.totalPrice, 0);
 

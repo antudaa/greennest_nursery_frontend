@@ -25,7 +25,7 @@ const EditProductButton: React.FC<TProductEditButtonProps> = ({ record }) => {
     });
     const [updateProduct] = useUpdateProductMutation();
     const { data: CategoryData } = useGetCategoryQuery({});
-    const Categories = CategoryData?.data?.data?.data || [];
+    const Categories = CategoryData?.data?.data;
 
     useEffect(() => {
         setInitialValues({
@@ -103,7 +103,7 @@ const EditProductButton: React.FC<TProductEditButtonProps> = ({ record }) => {
                         rules={[{ required: false }]}
                     >
                         <Select>
-                            {Categories.map((category: TCategory) =>
+                            {Categories?.map((category: TCategory) =>
                                 <Option key={category._id} value={category._id}>{category.categoryName}</Option>
                             )}
                         </Select>
@@ -114,7 +114,7 @@ const EditProductButton: React.FC<TProductEditButtonProps> = ({ record }) => {
                         name="description"
                         rules={[{ required: false }]}
                     >
-                        <Input.TextArea showCount maxLength={300} />
+                        <Input.TextArea showCount maxLength={1000} />
                     </Form.Item>
 
                     <Form.Item
@@ -166,6 +166,7 @@ const EditProductButton: React.FC<TProductEditButtonProps> = ({ record }) => {
                         </Button>
                     </Form.Item>
                 </Form>
+
             </Modal>
         </div>
     );

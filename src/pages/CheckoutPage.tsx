@@ -27,7 +27,7 @@ const CheckoutPage = () => {
                     <div className="relative h-full">
                         <div className="px-4 py-8 sm:overflow-auto sm:h-[calc(100vh-60px)]">
                             <div className="space-y-4">
-                                {cart.map((item) => (
+                                {cart?.map((item) => (
                                     <CheckOutCartCard
                                         key={item._id}
                                         item={item}

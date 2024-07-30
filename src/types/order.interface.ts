@@ -16,7 +16,9 @@ export type TProductInfo = {
     productId: string;
     productName: string;
     category: {
+        _id: string;
         categoryName: string;
+        categoryImage: string;
     };
     unitPrice: number;
     productImage: string;

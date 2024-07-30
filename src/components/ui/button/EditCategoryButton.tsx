@@ -47,8 +47,8 @@ const EditCategoryButton: React.FC<TCategoryEditButtonProps> = ({ record }) => {
                 message.success(res.message);
                 setOpen(false);
             }
-        } catch (error) {
-            message.error('Something went wrong!');
+        } catch (error: any) {
+            message.error(error.data.message);
         }
     };
 

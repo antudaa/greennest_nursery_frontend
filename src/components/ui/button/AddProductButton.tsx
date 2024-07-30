@@ -12,7 +12,7 @@ const AddProductButton = () => {
     const [open, setOpen] = useState(false);
     const [addProduct] = useAddProductMutation();
     const { data: CategoryData } = useGetCategoryQuery({});
-    const Categories = CategoryData?.data?.data?.data || [];
+    const Categories = CategoryData?.data?.data;
 
     const handleEdit = () => {
         setOpen(true);
@@ -74,7 +74,7 @@ const AddProductButton = () => {
                         name="description"
                         rules={[{ required: true }]}
                     >
-                        <Input.TextArea showCount maxLength={300} placeholder="Add a short description..." />
+                        <Input.TextArea showCount maxLength={1000} placeholder="Add a short description..." />
                     </Form.Item>
 
                     <Form.Item

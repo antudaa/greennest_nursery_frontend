@@ -12,7 +12,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
         case "ADD_TO_CART": {
             const existingProduct = state.cart.find(item => item._id === action.payload.product._id);
             if (existingProduct) {
-                const updatedCart = state.cart.map(item =>
+                const updatedCart = state.cart?.map(item =>
                     item._id === action.payload.product._id
                         ? { ...item, cartQuantity: Math.min(item.cartQuantity + 1, item.quantity) }
                         : item
@@ -33,7 +33,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
             };
         }
         case "UPDATE_QUANTITY": {
-            const updatedCart = state.cart.map(item => {
+            const updatedCart = state.cart?.map(item => {
                 if (item._id === action.payload.id) {
                     const newQuantity = Math.min(Math.max(action.payload.quantity, 1), item.quantity);
                     return { ...item, cartQuantity: newQuantity };

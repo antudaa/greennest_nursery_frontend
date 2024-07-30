@@ -45,7 +45,7 @@ const ImageGallery = () => {
                 </div>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {imageChunks.map((chunk, index) => (
+                {imageChunks?.map((chunk, index) => (
                     <div key={index} className="grid gap-4">
                         {chunk.map((src, idx) => (
                             <div key={idx}>
