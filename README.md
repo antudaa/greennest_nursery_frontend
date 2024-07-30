@@ -1,4 +1,4 @@
-# GreenNest Nursery - React + TypeScript + Vite
+# GreenNest Nursery - React + TypeScript + Vite + Redux + Ant Design + Tailwind
 
 Welcome to the GreenNest Nursery project! This repository contains the frontend code for our nursery's online platform, built using React, TypeScript, and Vite. The application provides a seamless experience for managing and purchasing nursery products, viewing product details, and handling cart and checkout functionalities.
 
