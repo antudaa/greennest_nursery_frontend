@@ -38,7 +38,7 @@ const ProductDetailsPage = () => {
 
     return (
         <div>
-            <div className="min-w-screen min-h-screen bg-green-300 flex items-center p-5 lg:p-10 overflow-hidden relative">
+            <div className="min-w-screen min-h-screen bg-green-100 flex items-center p-5 lg:p-10 overflow-hidden relative">
                 <div className="w-full max-w-6xl rounded bg-white shadow-xl p-10 lg:p-20 mx-auto text-gray-800 relative md:text-left">
                     <div className="md:flex items-center -mx-10">
                         <div className="w-full md:w-1/2 px-10 mb-10 md:mb-0">

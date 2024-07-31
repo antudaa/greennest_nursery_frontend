@@ -35,7 +35,7 @@ const AddProductButton = () => {
             <Button type="link" onClick={handleEdit} style={{ backgroundColor: '#3b82f6', color: 'white' }}>Add Product</Button>
 
             <Modal
-                title={<p>Edit Product Info</p>}
+                title={<p>Add Product</p>}
                 footer={null}
                 open={open}
                 onCancel={() => setOpen(false)}

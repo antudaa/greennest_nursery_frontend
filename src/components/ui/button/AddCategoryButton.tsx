@@ -28,7 +28,7 @@ const AddCategoryButton = () => {
             <Button type="link" onClick={() => handleAddCategory()} style={{ backgroundColor: '#3b82f6', color: 'white' }}>Add Category</Button>
 
             <Modal
-                title={<p>Edit Category</p>}
+                title={<p>Add Category</p>}
                 footer={null}
                 open={open}
                 onCancel={() => setOpen(false)}
